@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECMAScript arguments 对象</title>
+</head>
+<body>
+<script>
+    // 在函数代码中，使用特殊对象 arguments，开发者无需明确指出参数名，就能访问它们。
+
+    // 例如，在函数 sayHi() 中，第一个参数是 message。
+    // 用 arguments[0] 也可以访问这个值，即第一个参数的值（第一个参数位于位置 0，第二个参数位于位置 1，依此类推）。
+    // 因此，无需明确命名参数，就可以重写函数：
+    function sayHi() {
+        console.log(arguments[0]+","+arguments[1]+"!")
+    }
+    sayHi("Hello","Luka");
+
+    // 检测参数个数
+    // 还可以用 arguments 对象检测函数的参数个数，引用属性 arguments.length 即可。
+    // 与其他程序设计语言不同，ECMAScript 不会验证传递给函数的参数个数是否等于函数定义的参数个数。
+    // 开发者定义的函数都可以接受任意个数的参数（根据 Netscape 的文档，最多可接受 255 个），而不会引发任何错误。
+    // 任何遗漏的参数都会以 undefined 传递给函数，多余的函数将忽略。
+    function howManyArgs() {
+        console.log(arguments.length);
+    }
+    howManyArgs("string", 45);
+    howManyArgs();
+    howManyArgs(12);
+
+</script>
+</body>
+</html>
