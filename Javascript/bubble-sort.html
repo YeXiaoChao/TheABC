@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序</title>
+</head>
+<body>
+<script>
+    var theArr = [8,18,98,88,68,58,48,78,128,30];
+    function bubbleSort(arr) {
+        var arrLenght = arr.length;
+        var temp;
+        while (arrLenght>0){
+            for(var i=0;i<arrLenght-1;i++){
+                //把大的数往后移
+                if(arr[i]>arr[i+1]){
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+            arrLenght--;
+        }
+        return arr;
+    }
+    document.write(bubbleSort(theArr));
+</script>
+</body>
+</html>

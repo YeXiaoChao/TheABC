@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-align:center在IE7和IE8下的区别</title>
+    <script>
+        //text-align:center 在IE7中，元素与文字都居中；而在IE8下仅文字居中，元素并不居中。
+        //解决方法：可以在其子元素中加入CSS属性：margin:0 auto;
+    </script>
+</head>
+<body>
+<div style="background-color:greenyellow;text-align: center; height: 180px;width: 380px;border: 1px solid black;">
+    <div style="background-color: bisque;text-align: center; height: 88px;width: 180px;">
+        风雨如晦，鸡鸣不已。
+    </div>
+</div>
+<div style="height: 20px;"></div>
+<div style="background-color:greenyellow;text-align: center; height: 180px;width: 380px;border: 1px solid black;">
+    <div style="background-color: bisque;text-align: center; height: 88px;width: 180px;margin: 0 auto;">
+        风雨如晦，鸡鸣不已。
+    </div>
+</div>
+</body>
+</html>

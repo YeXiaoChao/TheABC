@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的继承</title>
+</head>
+<body>
+<script>
+    function A(name,age) {
+        this.name = name;
+        this.age = age;
+        this.showName = function () {
+            console.log(this.name+"'s age is "+this.age+".")
+        }
+    }
+
+    //1. 原型链继承(prototype)实现继承
+    function B1() { }
+    B1.prototype = new A("Luka",27);
+    var b1 = new B1();
+    B1.prototype.zodiac = "Snake";
+    B1.prototype.showZodiac = function () {
+        console.log(this.name +"'s zodiac is "+this.zodiac +".")
+    }
+    b1.showName();
+    b1.showZodiac();
+
+    //2. 构造函数实现继承
+    function B2(name, age,starSign) {
+        this.temp = A;
+        this.temp(name,age);
+        delete this.temp;
+        this.name = name;
+        this.age = age;
+        this.starSign = starSign;
+        this.showZodiac = function () {
+            console.log(this.name+"'s star sign is "+this.starSign +".")
+        }
+    }
+    var b2 = new B2("Luka",27,"Sagittarius");
+    b2.showName();
+    b2.showZodiac();
+
+    //3. call , apply实现继承
+
+    //call与aplly的异同：
+    //1,第一个参数this都一样,指当前对象
+    //2,第二个参数不一样：call的是一个个的参数列表；apply的是一个数组（arguments也可以）
+    function B3(name,age) {
+        A.call(this,name,age);
+    }
+    var b3 = new B3("Luka",27);
+    b3.showName();
+
+    function B4(name,age) {
+        A.apply(this,[name,age]); // 等于 A.apply(this.arguments);
+    }
+    var b4 = new B3("Luka",27);
+    b4.showName();
+</script>
+</body>
+</html>
