@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用table-cell，inline-block实现水平垂直居中</title>
+    <script>
+        window.onload = function () {
+            var pageWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            document.getElementById('container').style.width = pageWidth+"px";
+        }
+    </script>
+    <style>
+        #container { display: table-cell; text-align: center; vertical-align: middle; width: 600px; height: 200px; background: #ccc;}
+        #center-div { display: inline-block; }
+
+        #center-div {  width: 100px; height: 100px; background: #2b669a;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="center-div"></div>
+</div>
+</body>
+</html>

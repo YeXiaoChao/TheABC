@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用相对绝对定位和负边距实现上下左右居中</title>
+    <style>
+        /* 首先相对父元素top，left定位在50%的位置，这时候只是图片左上角居中，而中心点还没居中，
+         * 加上margin: -50px 0 0 -50px;利用负边距把图片的中心点位于父元素的中心点，从而实现垂直水平居中 */
+        #container {height: 200px;position: relative; background: #ccc;}
+        #center-div { display: inline-block; position: relative;top: 50%;left: 50%;margin: -50px 0 0 -50px;}
+
+        #center-div {  width: 100px; height: 100px; background: #2b669a;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="center-div" src="../imgs/pic_01.jpg"/></div>
+</body>
+</html>

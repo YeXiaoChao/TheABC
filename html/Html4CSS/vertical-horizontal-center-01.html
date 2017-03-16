@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用inline-block和vertical-align来实现居中</title>
+    <style>
+        #container { text-align: center; height: 200px; background: #cccccc;}
+        #container:before { content: ""; height: 100%; display: inline-block; vertical-align: middle;margin-right: -0.25em;}
+        #center-div { display: inline-block; vertical-align: middle;}
+
+        #center-div {  width: 100px; height: 100px; background: #2b669a;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="center-div"></div>
+</div>
+</body>
+</html>
