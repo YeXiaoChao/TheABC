@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>容器内（Within Container）的居中</title>
+    <script>
+        // 我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……
+        // 实际上，实现垂直居中仅需要声明元素高度和下面的CSS:
+        // .Absolute-Center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        // 绝对居中（AbsoluteCentering）的工作机理可以阐述如下：
+        // 1、在普通内容流（normal content flow）中，margin:auto的效果等同于margin-top:0;margin-bottom:0。
+        // 2、position:absolute使绝对定位块跳出了内容流，内容流中的其余部分渲染时绝对定位部分不进行渲染。
+        // 3、为块区域设置top: 0; left: 0; bottom: 0; right: 0;将给浏览器重新分配一个边界框，
+        // 此时该块block将填充其父元素的所有可用空间，父元素一般为body或者声明为position:relative;的容器。
+        // 4、给内容块设置一个高度height或宽度width，能够防止内容块占据所有的可用空间，促使浏览器根据新的边界框重新计算margin:auto
+        // 5、由于内容块被绝对定位，脱离了正常的内容流，浏览器会给margin-top,margin-bottom相同的值，使元素块在先前定义的边界内居中。
+        // 这么看来，margin:auto似乎生来就是为绝对居中(Absolute Centering)设计的，所以绝对居中(Absolute Centering)应该都兼容符合标准的现代浏览器。
+        // 简而言之（TL;DR）：绝对定位元素不在普通内容流中渲染，因此margin:auto可以使内容在通过top: 0; left: 0; bottom: 0;right: 0;设置的边界内垂直居中。
+    </script>
+    <script>
+        // 内容块的父容器设置为position:relative，使用上述绝对居中方式，可以使内容居中显示于父容器
+    </script>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center"></div>
+</div>
+</body>
+</html>

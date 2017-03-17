@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>图片(Images)绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        /* 绝对居中（AbsoluteCentering）也适用于图片。
+        对图片自身应用class类或CSS样式，并给图片添加height:auto样式，图片会自适应居中显示，
+        如果外层容器可以resize则随着容器的重绘，图片也相应重绘，始终保持居中。 */
+        .center.is-Image  { width: 120px;height: 120px;}
+        /* 需要注意的是height:auto虽然对图片居中有用，但如果是在图片外层的内容块上应用了height:auto则会产生一些问题：规则的内容块会被拉伸填充整个容器。
+        这时，我们可以使用可变高度(Variable Height)方式解决这个问题。
+        问题的原因可能是渲染图片时要计算图片高度，这就如同你自己定义了图片高度一样，浏览器得到了图片高度就不会像其他情况一样去解析margin:auto垂直居中了。
+        所以我们最好对图片自身应用这些样式而不是父元素。*/
+    </style>
+</head>
+<body>
+<div class="container">
+        <img src="../../imgs/pic_01.jpg" class="center is-Image"/>
+</div>
+</body>
+</html>

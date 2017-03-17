@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>重绘(Resizing)绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px;}
+        /* 你可以使用其他class类或JavaScript代码来重绘内容块同时保证居中，无须手动重新计算中心尺寸。
+        当然，你也可以添加resize属性来让用户拖拽实现内容块的重绘。
+        绝对居中（Absolute Centering）可以保证内容块始终居中，无论内容块是否重绘。
+        可以通过设置min-/max-来根据自己需要限制内容块的大小，并防止内容溢出窗口/容器。*/
+        .center.is-Resizable {min-width: 20%;max-width: 80%;min-height: 20%;max-height: 80%;resize: both;overflow: auto;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center is-Resizable">This is Center.</div>
+</div>
+</body>
+</html>

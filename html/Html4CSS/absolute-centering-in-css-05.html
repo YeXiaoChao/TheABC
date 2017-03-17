@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>溢出情况(Overflow)绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px; }
+        /* 内容高度大于块元素或容器（视区viewport或设为position:relative的父容器）会溢出，
+        这时内容可能会显示到块与容器的外面，或者被截断出现显示不全（分别对应内容块overflow属性设置为visible和hidden的表现）。
+         加上overflow: auto会在内容高度超过容器高度的情况下给内容块显示滚动条而不越界 */
+        .center.is-Overflow { overflow: auto; }
+        /* 如果内容块自身不设置任何padding的话，可以设置max-height: 100%;来保证内容高度不超越容器高度。 */
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center is-Overflow">
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+        This is Center.<br />
+    </div>
+</div>
+</body>
+</html>

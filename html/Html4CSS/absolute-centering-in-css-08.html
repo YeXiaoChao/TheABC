@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>可变高度（Variable Height）绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px; }
+        /* 这种情况下实现绝对居中（AbsoluteCentering）必须要声明一个高度，不管你是基于百分比的高度还是通过max-height控制的高度，
+        还有，别忘了设置合适的overflow属性。对自适应/响应式情景，这种方法很不错。 */
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center is-Resizable">This is Center.</div>
+</div>
+</body>
+</html>

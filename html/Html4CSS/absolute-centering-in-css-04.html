@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>响应式(Responsive)绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px;}
+        /* 绝对居中最大的优势应该就是对百分比形式的宽高支持的非常完美。
+        甚至min-width/max-width 和min-height/max-height这些属性在自适应盒子内的表现也和预期很一致。 */
+        .center.is-Responsive { width: 60%;height: 60%;min-width: 200px;max-width: 400px;padding: 40px;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center is-Responsive">This is Center.</div>
+</div>
+</body>
+</html>

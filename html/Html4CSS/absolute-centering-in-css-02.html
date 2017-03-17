@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="绝对定位居中(Absolute Centering)技术" />
+    <title>视区内（Within Viewport）的绝对居中</title>
+    <style>
+        .container { background: #2E5F3F;position: relative; height: 300px;}
+        .center { margin: auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+        .center { background: #4FA46B; ;width: 50%;height: 120px;}
+        /* 想让内容块一直停留在可视区域内？将内容块设置为position:fixed;并设置一个较大的z-index层叠属性值 */
+        .container { height: 900px;}
+        .center.is-Fixed {position: fixed;z-index: 9999;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center is-Fixed"></div>
+</div>
+</body>
+</html>
