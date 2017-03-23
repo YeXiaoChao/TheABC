@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中布局</title>
+    <script>
+        // 这应该是IE 6对margin的 auto 并没有正确的设置。
+        // 最简单的方法是在父元件中使用 text-align: center 属性，而在元件中使用 text-align: left
+    </script>
+    <style>
+        #container { border: 1px solid #000;background: #777;width: 400px;height:160px;margin: 30px 0  0 30px;}
+        #element { background: #95CFEF;border: 1px solid #36F;width:300px;height: 100px;margin: 30px auto;}
+        #container {text-align: center;}
+        #element { text-align: left;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="element"></div>
+</div>
+</body>
+</html>

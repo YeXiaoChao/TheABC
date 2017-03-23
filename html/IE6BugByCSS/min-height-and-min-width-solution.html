@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置min-height和min-width</title>
+    <script>
+        // IE忽略了min-height
+        // 解决方法一:利用了 !important - #element {height: auto !important;height: 100px;}
+        // 解决方法二:#element { min-height: 150px; height: 150px; }  html>body #element { height: auto; }
+    </script>
+    <style>
+        #element { background: #95CFEF;width: 300px;min-height: 100px;}
+        #element {height: auto !important;height: 100px;}
+    </style>
+</head>
+<body>
+<div id="element"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixing the Broken Box Model</title>
+    <script>
+        // Internet Explorer曲解了“盒子模子”可能是最不可原谅的事情了。
+        // IE 6 这个半标准的浏览器回避了这个事情，但这个问题还是会因为IE运行在“怪异模式”下出现。
+        // 两个Div元件。一个是有fix的，一个是没有的。而他们不同的高和宽加上padding的总合却是不一样的。
+    </script>
+    <style>
+        #hasfixed { width: 400px;height: 150px;padding: 50px;background: #3366FF;}
+        /* 你要原来的长和宽上加上了padding。但这个fix只会作用于IE了的“怪异模式”，所以你不需要担心在IE6的正常模式下会有问题。 */
+        #hasfixed {_height: 250px;_width: 500px;}
+    </style>
+</head>
+<body>
+<div id="hasfixed"></div>
+</body>
+</html>

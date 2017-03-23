@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float 布局错误行为 Misbehaving</title>
+    <script>
+        // 使用无table的布局最重要的就是使用CSS的float元件。
+        // 在很多情况下，IE6处理起来好像在摸索阶段，有些时候，你会发现很多奇怪的行为。
+        // 比如在其中有一些文本的时候
+    </script>
+    <style>
+        #element, #anotherelement{
+            background: #95CFEF;
+            border: solid 1px #36F;
+            width: 100px;
+            height: 150px;
+            margin: 30px;
+            padding: 10px;
+            float: left;
+        }
+        #container{
+            background: #C2DFEF;
+            border: solid 1px #36F;
+            width: 365px;
+            margin: 30px;
+            padding: 5px;
+            overflow: auto;
+        }
+        #element{ overflow: hidden;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="element">http://yexiaochao.github.com/</div>
+    <div id="anotherelement"></div>
+</div>
+</body>
+</html>

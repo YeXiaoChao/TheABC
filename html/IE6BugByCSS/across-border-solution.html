@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨出边界</title>
+    <script>
+        // 解决方法：设置 position: relative;属性 -  #element {position: relative;}
+    </script>
+    <style>
+        #element { background: #95CFEF;border: 1px solid #3366FF;width: 300px;height: 150px;margin: 30px 0;overflow: auto;}
+        #anotherElement {background: #555;width: 150px;height: 175px; position: relative;margin: 30px;}
+        #element {position: relative;}
+    </style>
+</head>
+<body>
+<div id="element">
+    <div id="anotherElement"></div>
+</div>
+</body>
+</html>

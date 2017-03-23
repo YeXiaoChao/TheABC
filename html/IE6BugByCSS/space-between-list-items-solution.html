@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在list项目门的空行</title>
+    <script>
+        // 方法1：固定li 的高度 - li a { height: 20px;}
+        // 方法2：向左浮动，并清除浮动 -  li a { float: left;clear: left;}
+        // 方法3：为 li 加上display: inline;  -  li { display: inline; }
+    </script>
+    <style>
+        ul {
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        li a {
+            background: #95CFEF;
+            display: block;
+        }
+        li { display: inline; }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+</ul>
+</body>
+</html>

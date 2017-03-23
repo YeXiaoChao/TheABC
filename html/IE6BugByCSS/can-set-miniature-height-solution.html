@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无法设置微型高度</title>
+    <script>
+        // 解决方案一:这个BUG的产生原因很简单，IE不允许元件的高度小于字体的高度，所以，下面的fix是设置上字体大小。
+        //  #element {font-size: 0;}
+        // 解决方案二:最佳的解决方法是使用 overflow: hidden 。
+    </script>
+    <style>
+        #element {background: #95CFEF;border: 1px solid #3366FF;width: 300px;height: 2px;margin: 30px 0;}
+        /* #element {font-size: 0;}*/
+        #element { overflow: hidden;}
+    </style>
+</head>
+<body>
+<div id="element"></div>
+</body>
+</html>
