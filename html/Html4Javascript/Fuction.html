@@ -14,7 +14,7 @@
     function sayHi(msg) {
         console.log(msg);
     }
-    var sayHi2 = new Function(msg,"console.log(msg)");
+    var sayHi2 = new Function("msg","console.log(msg)");
 
     var msg = "Hello,Luka!";
     //上面两个函数输出的内容是一样的
@@ -29,6 +29,37 @@
         console.log(num + 30);
     }
     doAdd(20); //输出50 - 第二个函数重载了第一个函数
+
+
+    // 很显然，doAddF 的值被改成了指向不同对象的指针。
+    // 函数名只是指向函数对象的引用值，行为就像其他对象一样。甚至可以使两个变量指向同一个函数：
+    var doAddF = new Function("num","console.log(num + 20);");
+    var doAddF = new Function("num","console.log(num + 30);");
+    doAdd(20); //输出50
+
+    // 变量 doAddF 被定义为函数后，alsoDoAdd 被声明为指向同一个函数的指针。
+    // 用这两个变量都可以执行该函数的代码，并输出相同的结果
+    // 因此，如果函数名只是指向函数的变量，那么可以把函数作为参数传递给另一个函数吗？回答是肯定的！
+    var alsoDoAdd = doAdd;
+    doAddF(20);//60
+    alsoDoAdd(20); //60
+
+    function callAnotherFunc(fnFunction, vArgument) {
+        fnFunction(vArgument);
+    }
+    callAnotherFunc(doAddF,20); // 60
+
+    // 函数属于引用类型，所以它们也有属性和方法
+    // ECMAScript 定义的属性 length 声明了函数期望的参数个数。
+    function hello() {
+        console.log("Hello,World!");
+    }
+    console.log(doAdd.length); // 1
+    console.log(hello.length); // 0
+    // 无论定义了几个参数，ECMAScript 可以接受任意多个参数（最多 25 个）
+
+    // Function 对象也有与所有对象共享的 valueOf() 方法和 toString() 方法
+    console.log(doAdd.toString()) // function doAdd(num) { console.log(num + 30 ); }
 </script>
 </body>
 </html>
