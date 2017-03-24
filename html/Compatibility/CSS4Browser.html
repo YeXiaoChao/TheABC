@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS中判断ie各版本浏览器</title>
+    <style type="text/css">
+        #element{ width:300px;height:100px;}
+        #element{
+            background:blue; /*IE9及以上，Firefox等非IE浏览器背景蓝色，如果删除后续样式，都会显示蓝色背景*/
+            background:red \9; /*IE8 背景红色*/
+            *background:black; /*IE7 背景黑色；如果删除此行和下一行样式，IE8以下也会显示红色*/
+            _background:orange; /*IE5、IE6 背景橘色；如果删除这行样式，IE7以下也会显示黑色背景*/
+        }
+        #element {
+            /* 其他浏览器可读取「!important;」但IE6及以下却不行 */
+            border:5px solid green !important; /*非IE6 边框绿色*/
+            border:5px solid yellow; /*IE5、IE6 边框黄色*/
+        }
+    </style>
+</head>
+<body>
+<div id="element">
+</div>
+</body>
+</html>
