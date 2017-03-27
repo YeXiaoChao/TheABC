@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The compatMode</title>
+</head>
+<body>
+<div id="element"></div>
+<style>
+    #element{ width: 100px; height: 60px; padding: 10px;margin: 20px;border: 1px solid #9f1c24;}
+</style>
+<script>
+    var compatMode = window.top.document.compatMode;
+    var elem = document.getElementById("element");
+    document.write("The compatMode is "+compatMode+".The Element's width is " + elem.offsetWidth + " px and it's height is "+elem.offsetHeight+" px");
+</script>
+</body>
+</html>

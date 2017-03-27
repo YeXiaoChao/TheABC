@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定和普通事件</title>
+</head>
+<body>
+<input type="button" id="theButton" value="Click it"/>
+<script>
+    var btnClick = document.getElementById('theButton');
+    // 用普通方法添加两个事件
+    btnClick.onclick = function () {
+        console.log("The is the first click event!"); // 不执行，不显示
+    }
+    btnClick.onclick = function () {
+        console.log("The is the second click event!"); // 执行，会显示
+    }
+    // 用事件绑定添加两个事件
+    btnClick.addEventListener('click',function () {
+        console.log("The is the first click event listener!");// 执行，会显示
+    })
+    btnClick.addEventListener('click',function () {
+        console.log("The is the second click event listener!");// 执行，会显示
+    })
+    // PS:这里只使用W3C的标准写法添加事件，没有兼容低版本的IE。
+</script>
+</body>
+</html>

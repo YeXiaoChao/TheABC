@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制转换</title>
+</head>
+<body>
+<script>
+    var strNum = '1.645';
+    var strAnotherNum = "-1";
+    var strAnotherNum2 = "2";
+    var isTrue = true;
+
+    //parseInt（参数1，参数2）将字符串转换成整数
+    console.log(parseInt(strNum)); // 1
+    console.log(parseInt(strAnotherNum + strNum)); //  -11
+    console.log(parseInt(strNum + strAnotherNum)); // 1
+
+    //parseFloat()将字符串转换成浮点数字
+    console.log(parseFloat(strNum));//  1.645
+    console.log(parseFloat(strAnotherNum + strNum));//  -11.645
+    console.log(parseFloat(strNum + strAnotherNum));//  1.645
+    console.log(parseFloat(strNum + strAnotherNum2));//  1.6452
+
+    //Number() 函数把对象的值转换为数字
+    console.log(Number(strNum));// 返回 1.645
+    console.log(Number(strAnotherNum + strNum)); // -11.645
+    console.log(Number(strNum + strAnotherNum)); // NaN
+    console.log(Number(strNum + strAnotherNum2)); // 1.6452
+
+    //string(参数)：可以将任何类型转换成字符串
+    console.log(String(isTrue)); // "true"
+    console.log(String(strAnotherNum + strNum)); // "-11.645"
+    console.log(String(strNum + strAnotherNum)); // "1.645-1"
+    console.log(String(strNum + strAnotherNum2)); // "1.6452"
+
+    // Boolean()可以将任何类型的值转换成布尔值
+    console.log(Boolean(strNum)); //  true
+    console.log(Boolean(strAnotherNum + strNum)); //  true
+    console.log(Boolean(strNum + strAnotherNum)); //  true
+</script>
+</body>
+</html>
