@@ -22,6 +22,11 @@
     btnClick.addEventListener('click',function () {
         console.log("The is the second click event listener!");// 执行，会显示
     })
+    btnClick.addEventListener('click',LogThrid);
+    btnClick.removeEventListener('click',LogThrid);
+    function LogThrid() {
+        console.log("The is the third click event listener!");
+    }
     // PS:这里只使用W3C的标准写法添加事件，没有兼容低版本的IE。
 </script>
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IE和标准下兼容性的写法</title>
+</head>
+<body>
+<input type="button" id="theButton" value="Click it" onclick="ClickIt()"/>
+<script>
+    function ClickIt() {
+        // IE5-IE8 指向当前点击事件对象[Object]; IE9-IE10:指向当前点击事件对象[MSEventObj]; IE11: [PointerEventPrototype]
+        console.log(window.event);
+        // IE5-IE8 指向当前点击事件对象[Object]; IE9-IE10:指向当前点击事件对象[MSEventObj]; IE11: [PointerEventPrototype]
+        console.log(event);
+        // IE5-IE8 指向当前input元素对象[Object];    IE9-IE11:指向当前input 元素
+        console.log(window.event.srcElement);
+        // IE5-IE10 undefined;      IE11:指向当前input 元素
+        console.log(event.target);
+        // IE6 1345;    IE7:1325;    IE8:1346;    IE9-IE11:1350
+        console.log(document.body.clientWidth);
+        // IE6 0;   IE7:1345;   IE8:1362    IE9-IE11:1366
+        console.log(document.documentElement.clientWidth);
+        // IE6 647; IE7:22;  IE8:23;    IE9-IE11:23
+        console.log(document.body.clientHeight);
+        // IE6 0;   IE7-8:647;    IE9-IE11:651
+        console.log(document.documentElement.clientHeight);
+    }
+</script>
+</body>
+</html>

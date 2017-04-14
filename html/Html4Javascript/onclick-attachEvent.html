@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IE 事件绑定</title>
+</head>
+<body>
+<input type="button" id="theButton" value="Click it"/>
+<script>
+    var btnClick = document.getElementById('theButton');
+    // 用事件绑定添加两个事件
+    btnClick.attachEvent('onclick',function () {
+        console.log("The is the first click event listener!");// 执行
+    })
+    btnClick.attachEvent('onclick',function () {
+        console.log("The is the second click event listener!");// 执行
+    })
+    btnClick.attachEvent('onclick',LogThrid);
+    btnClick.detachEvent('onclick',LogThrid);
+    function LogThrid() {
+        console.log("The is the third click event listener!");
+    }
+</script>
+</body>
+</html>
