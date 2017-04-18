@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eval()方法和JSON.parse()方法</title>
+</head>
+<body>
+<script>
+    var jsonData1 = '{"name":"Luka","age":"18"}';
+    var jsonObj11 = eval('('+jsonData1+')'); // eval() 方法
+    console.log(jsonObj11.name+"'age is "+jsonObj11.age); // 输出：Luka'age is 18
+    var jsonObj12 = JSON.parse(jsonData1); // JSON.parse()方法
+    console.log(jsonObj12.name+"'age is "+jsonObj12.age); // 输出：Luka'age is 18
+
+    var jsonData2 = '{"name":console.log("Hello,Luka!"),"age":"18"}';
+    var jsonObj21 = eval('('+jsonData2+')');
+    console.log(jsonObj21.name+"'age is "+jsonObj21.age); // 会先输出：Hello,Luka!  然后输出  undefined'age is 18
+    var jsonObj22 = JSON.parse(jsonData2);
+    console.log(jsonObj22.name+"'age is "+jsonObj22.age); // 直接报错
+</script>
+</body>
+</html>

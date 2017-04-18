@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取非行间样式的函数</title>
+    <style>
+        * { text-align: center;}
+        input { margin-top: 30px;padding:10px 20px;}
+        #div { width: 500px;height: 300px;background: red;margin: 10px auto;}
+    </style>
+</head>
+<body>
+<input type="button" value="Style" id="btn" />
+<div id="div"></div>
+<script>
+    function getStyle(obj, attr) { //获取非行间样式，obj是对象，attr是值
+        if(obj.currentStyle){ //针对IE 获取非行间样式
+            return obj.currentStyle[attr];
+        }else {
+            return getComputedStyle(obj,false)[attr];
+        }
+    }
+
+    function css(obj, attr, value) { //对象，样式，值。传两个参数的时候为获取样式，3个是设置样式
+        if(arguments.length == 2){ //arguments 参数数组。当参数数组长度为2 时，表示获取获取css样式
+            return getStyle(obj,attr); // 通过getStyle 函数返回对象的非行间样式
+        }else if(arguments.length == 3){ //传递参数参数时，设置某个对象的值
+            obj.style[attr] = value;
+        }
+    }
+
+    window.onload = function () {
+        var oDiv = document.getElementById("div");
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            console.log("width:"+getStyle(oDiv,"width")); // width:500px
+            css(oDiv,"width","300px");
+            console.log("width:"+css(oDiv,"width")); // width:300px
+        }
+    }
+</script>
+</body>
+</html>

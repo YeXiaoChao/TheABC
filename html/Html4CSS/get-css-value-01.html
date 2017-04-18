@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取CSS的值</title>
+    <style>
+        #div1 { width: 200px;height: 80px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2" style=" width: 100px;height: 40px;background: blue;"></div>
+<script>
+    var objDiv1 = document.getElementById("div1");
+    console.log("Div1's width:"+objDiv1.style.width); // Div1's width:
+
+    var objDiv2 = document.getElementById("div2");
+    console.log("Div2's width:"+objDiv2.style.width); // Div2's width:100px
+
+    objDiv1.style.width = "250px";
+    console.log("Div1's width:"+objDiv1.style.width); // Div1's width:250px
+</script>
+</body>
+</html>

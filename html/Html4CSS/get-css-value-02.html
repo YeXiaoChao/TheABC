@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取CSS的值</title>
+    <style>
+        #div1 { width: 200px;height: 80px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2" style=" width: 100px;height: 40px;background: blue;"></div>
+<script>
+    function getStyle(obj, attr) { //获取非行间样式，obj是对象，attr是值
+        if(obj.currentStyle){ //针对IE 获取非行间样式
+            return obj.currentStyle[attr];
+        }else {
+            return getComputedStyle(obj,false)[attr];
+        }
+    }
+    var objDiv1 = document.getElementById("div1");
+    console.log("Div1's width:"+getStyle(objDiv1,"width")); // Div1's width:200px
+    var objDiv2 = document.getElementById("div2");
+    console.log("Div2's width:"+getStyle(objDiv2,"width")); // Div2's width:100px
+</script>
+</body>
+</html>
