@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>您也可以使用 insertBefore 方法插入/移动已有元素</title>
+</head>
+<body>
+<input type="button" id="btnDelete" value="插入主公" />
+<ul id="names"><li>刘备</li><li>关羽</li><li>张飞</li></ul>
+<script>
+    document.getElementById("btnDelete").onclick = function () {
+        var names = document.getElementById("names");
+        var node= names.lastChild;
+        var list=document.getElementById("names");
+        list.insertBefore(node,list.childNodes[0]);
+    }
+</script>
+</body>
+</html>

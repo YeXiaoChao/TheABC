@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止事件冒泡和浏览器的默认行为</title>
+</head>
+<body>
+<div id="c1">测试的文字,这里是样式C1,单击以冒泡的形式触发事件.</div><hr/>
+<div id="c2">测试的文字,这里是样式C2,单击以捕获的形式触发事件.</div><hr/>
+<div><input id="txt1" name="txt1" type="text" /></div><hr/>
+<script>
+    window.onload = function () {
+        var txt = document.getElementById("txt1");
+        document.getElementById("c1").onclick = function () {
+            console.log("你点击了第一个div");
+        }
+        document.getElementById("c2").onclick = function (e) {
+            console.log("你点击了第二个div");
+            stopBubble(e);
+        }
+        document.onclick = function () {
+            console.log("你点击了document");
+        }
+        txt.value = "123";
+        txt.onclick = function (e) {
+            stopBubble(e);
+        }
+        txt.onkeydown = function (e) {
+            stopDefault(e);
+            var lKeyCode = (navigator.appname=="Netscape")?event.which:event.keyCode;
+            console.log("你按下了键值:"+ lKeyCode);
+        }
+    };
+    function stopBubble(e) {
+        // 如果提供了事件对象，则这是个非IE浏览器
+        if(e && e.stopPropagation){
+            // 因此它支持W3C的stopPropagation()方法
+            e.stopPropagation();
+        }else {
+            // 否则，我们需要使用IE的方式来取消事件冒泡
+            window.event.cancelBubble = true;
+        }
+    }
+    function stopDefault(e) {
+        // 阻止默认浏览器动作（W3C）
+        if(e && e.preventDefault){
+            e.preventDefault();
+        }else {
+            //IE 中阻止函数器默认动作的方式
+            window.event.returnValue = false;
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

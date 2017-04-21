@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertBefore() 方法在您指定的已有子节点之前插入新的子节点</title>
+</head>
+<body>
+<input type="button" id="btnDelete" value="插入主公" />
+<ul id="names">
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+<script>
+    document.getElementById("btnDelete").onclick = function () {
+        // 首先请创建一个 LI 节点
+        var newItem = document.createElement("li");
+        // 然后创建一个文本节点
+        var textNode = document.createTextNode("刘备");
+        // 然后向这个 LI 节点追加文本节点
+        newItem.appendChild(textNode);
+        // 最后在列表中的首个子节点之前插入此 LI 节点
+        var names = document.getElementById("names");
+        // insertBefore() 方法在您指定的已有子节点之前插入新的子节点。
+        names.insertBefore(newItem,names.childNodes[0]);
+    }
+</script>
+</body>
+</html>

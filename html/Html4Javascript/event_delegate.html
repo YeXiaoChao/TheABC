@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<input type="button" id="btn" value="添加武将" />
+<ul id="names">
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+<script>
+    window.onload = function () {
+        var oUl = document.getElementById("names");
+        var oBtn = document.getElementById("btn");
+        var index = 1;
+        oUl.onmouseover = function (e) {
+            var target = TargetGet(e);
+            if(target.nodeName.toLowerCase() === "li"){
+                target.style.backgroundColor = "red";
+            }
+        }
+        oUl.onmouseout = function (e) {
+            var target = TargetGet(e);
+            if(target.nodeName.toLowerCase() === "li"){
+                target.style.backgroundColor = "";
+            }
+        }
+
+        oBtn.onclick = function () {
+            var oLi = document.createElement("li");
+            oLi.innerText = "武将"+index;
+            index++;
+            oUl.appendChild(oLi);
+        }
+        function TargetGet(e) {
+            // 兼容性的写法,替代if...else...
+            e = e||window.event;
+            var target = e.target||e.srcElement;
+            return target;
+        }
+    }
+</script>
+</body>
+</html>

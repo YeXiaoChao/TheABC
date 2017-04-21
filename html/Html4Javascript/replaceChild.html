@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replaceChild() 方法用新节点替换某个子节点</title>
+</head>
+<body>
+<input type="button" id="btnUpdate" value="替换主公" />
+<ul id="names"><li>刘备</li><li>关羽</li><li>张飞</li>
+</ul>
+<script>
+    document.getElementById("btnUpdate").onclick = function () {
+        // 首先创建一个新的文本节点
+        var textNode = document.createTextNode("曹操");
+        // 然后替换首个列表项中的首个子节点
+        var item = document.getElementById("names").childNodes[0];
+        // node.replaceChild(newnode,oldnode) 方法用新节点替换某个子节点
+        // 这个新节点可以是文档中某个已存在的节点，或者您也可创建新的节点
+        item.replaceChild(textNode,item.childNodes[0]);
+    }
+</script>
+</body>
+</html>

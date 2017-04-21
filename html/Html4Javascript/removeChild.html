@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>removeChild() 方法指定元素的某个指定的子节点</title>
+</head>
+<body>
+<input type="button" id="btnDelete" value="删除" />
+<ul id="names">
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+<script>
+    document.getElementById("btnDelete").onclick = function () {
+        var names = document.getElementById("names");
+        var node = names.firstElementChild||names.firstChild;
+        // removeChild() 方法指定元素的某个指定的子节点。
+        // 以 Node 对象返回被删除的节点，如果节点不存在则返回 null。
+        names.removeChild(node);
+    }
+</script>
+</body>
+</html>

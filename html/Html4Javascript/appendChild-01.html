@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加、删除、替换、插入到某个接点的方法</title>
+</head>
+<body>
+<input type="button" id="btnAdd" value="添加武将" />
+<ul id="names">
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+<script>
+    var index = 1;
+    document.getElementById("btnAdd").onclick = function () {
+        // appendChild() 方法向节点添加最后一个子节点
+        var node = document.createElement("li");
+        var textnode = document.createTextNode("武将"+index++);
+        node.appendChild(textnode);
+        document.getElementById("names").appendChild(node);
+    }
+</script>
+</body>
+</html>
