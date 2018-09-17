@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js v-bind</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="yc">
+    <span v-bind:title="message">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </div>
+  <script>
+    var yc = new Vue({
+      el:'#yc',
+      data:{
+        message:'页面加载于 ' + new Date().toLocaleString()
+      }
+    })
+  </script>
+</body>
+</html>

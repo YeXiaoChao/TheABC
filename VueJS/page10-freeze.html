@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js Object.freeze()</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="yc">
+    <p>{{foo}}</p>
+  <!-- 这里的 `foo` 不会更新！ -->
+  <button v-on:click="foo='baz'">Change it</button>
+  </div>
+  <script>
+  var obj = {
+    foo:'bar'
+  }
+  //使用 Object.freeze()，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。
+  Object.freeze(obj);
+  var vm = new Vue({
+    el:'#yc',
+    data:obj
+  })
+  </script>
+</body>
+</html>

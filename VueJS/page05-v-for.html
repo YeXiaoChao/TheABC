@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue.js v-for</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="yc">
+  <ol>
+    <li v-for="todo in todos">
+      {{todo.text}}
+    </li>
+  </ol>
+</div>
+<script>
+  var yc = new Vue({
+    el:'#yc',
+    data:{
+      todos:[
+        {text:'刘备'},
+        {text:'关羽'},
+        {text:'张飞'}
+      ]
+    }
+  })
+</script>
+</body>
+</html>

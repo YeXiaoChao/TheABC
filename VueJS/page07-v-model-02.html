@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vue.js v-model</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="yc">
+  <p>{{message}}</p>
+  <input v-model="message" />
+</div>
+<script>
+  var yc = new Vue({
+    el:'#yc',
+    data:{
+      message:'Hello Vue.js!'
+    }
+  })
+</script>
+</body>
+</html>

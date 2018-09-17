@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vue.js v-if</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="yc">
+  <p v-if="seen">现在你看到我了</p>
+  <p v-if="noseen">你看不见我</p>
+</div>
+<script>
+  var yc = new Vue({
+    el:'#yc',
+    data:{
+      seen:true,
+      noseen:false
+    }
+  })
+</script>
+</body>
+</html>
