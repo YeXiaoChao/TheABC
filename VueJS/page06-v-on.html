@@ -9,8 +9,10 @@
 <div id="yc">
   <p>{{message}}</p>
   <button v-on:click="reverseMessage">逆转消息</button>
+  <button @click="reverseMessage">逆转消息</button>
 </div>
 <script>
+// v-on:click="reverseMessage" 可以缩写为 @click="reverseMessage"
   var yc = new Vue({
     el:'#yc',
     data:{

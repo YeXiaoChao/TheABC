@@ -7,14 +7,24 @@
 </head>
 <body>
   <div id="yc">
-    <span v-bind:title="message">
+    <div>
+      <span v-bind:title="message1">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+      </span>
+    </div>
+   <div>
+      <span :title="message2">
       鼠标悬停几秒钟查看此处动态绑定的提示信息！
+     </span>
+    </div>
   </div>
   <script>
+  //v-bind:title="message" 可以简化为 :title="message"
     var yc = new Vue({
       el:'#yc',
       data:{
-        message:'页面加载于 ' + new Date().toLocaleString()
+        message1:'页面加载于 ' + new Date().toLocaleString(),
+        message2:'Hello, This is message2'
       }
     })
   </script>
