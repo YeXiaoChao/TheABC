@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vue.js Render</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="yc">
+  	<label>{{fullName}}</label>
+  </div>
+  <script type="text/javascript">
+  	var vm = new Vue({
+  		el:'#yc',
+  		data:{
+  			firstName:'Luka',
+  			lastName:'Yc'
+  		},
+  		computed:{
+  			fullName:{
+  				//getter
+  				get:function(){
+  					return this.firstName + ' ' + this.lastName
+  				},
+  				//setter
+  				set:function(newValue){
+  					var names = newValue.split(' ');
+  					this.firstName = names[0];
+  					this.lastName = names[names.length - 1];
+  				}
+  			}
+  		}
+  	})
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE htlm>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>列表(List) ———— JS中的算法和数据结构</title>
+</head>
+<body>
+<script type="text/javascript">
+	function List() {
+		this.listSize = 0; //初始化元素个数为0
+		this.pos = 0; //初始化位置为0
+		this.dataStore = [];//初始化空数组来保存列表元素
+		this.clear = clear;
+		this.find = find; //寻找元素
+		this.toString = toString;//显示列表中的元素
+		this.insert = insert;
+		this.append = append;
+		this.remove = remove;
+		this.front = front;
+		this.end = end;
+		this.prev = prev;
+		this.next = next;
+		this.length = length;//列表中的元素总数
+		this.currPos = currPos;
+		this.moveTo = moveTo;
+		this.getElement = getElement;
+		this.contains = contains;//判断给定值是否在列表中
+	}
+
+	//
+	function append(element){
+		this.dataStore[this.listSize++] = element;
+	}
+</script>
+</body>
+</html>
