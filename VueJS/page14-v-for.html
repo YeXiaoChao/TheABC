@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js v-for</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="yc">
+    <ul>
+      <li v-for="(item,index) in items">
+        {{parentMessage}} - {{index}} - {{item.message}}
+      </li>
+    </ul>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:'#yc',
+      data:{
+        parentMessage:'Parent',
+        items:[
+          {message:'Foo'},
+          {message:'Bar'}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
